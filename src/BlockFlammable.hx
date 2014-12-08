@@ -19,13 +19,16 @@ class BlockFlammable extends Block {
 	override public function update():Void {
 		super.update();
 		if (onFire) {
-			if (fireTime < 2) {
+			if (fireTime < 4) {
 				fireTime += 0.01;
+			} else {
+				scene.remove(this);
+				return;
 			}
 			fireTicker += fireTime;
 			while (fireTicker > 1) {
 				fireTicker--;
-				var magic = new Magic(x - 1 + Math.random() * 8, y - 1 + Math.random() * 8);
+				var magic = new Magic(x - 1 + Math.random() * 9, y - 1 + Math.random() * 9);
 				scene.add(magic);
 				magic.velocity = new Vector2((Math.random() - 0.5) / 2.0, (Math.random() - 0.5) / 2.0);
 				magic.lifetime = cast(magic.lifetime / 8 + Math.random() * 10);

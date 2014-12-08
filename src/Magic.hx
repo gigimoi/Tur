@@ -22,6 +22,7 @@ class Magic extends Entity {
 		graphic = magic;
 		lifetime = 60;
 		inert = false;
+		type = "magic";
 		whitelistCollisions = new Array<Entity>();
 	}
 	override public function render():Void 

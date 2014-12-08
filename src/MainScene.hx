@@ -22,5 +22,7 @@ class MainScene extends Scene {
 		}
 		add(player);
 		add(player.magic);
+		var backdrop = new TurBackdrop(player);
+		add(backdrop);
 	}
 }
